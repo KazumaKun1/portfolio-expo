@@ -1,6 +1,5 @@
-import { PortalHost } from "@rn-primitives/portal";
-import { ThemeProvider } from "expo-router/react-navigation";
 import { Slot } from "expo-router";
+import { ThemeProvider } from "expo-router/react-navigation";
 import { StatusBar } from "expo-status-bar";
 import { useColorScheme } from "react-native";
 
@@ -15,7 +14,6 @@ export default function RootLayout() {
     <ThemeProvider value={NAV_THEME[colorScheme]}>
       <StatusBar style={colorScheme === "dark" ? "light" : "dark"} />
       <Slot />
-      <PortalHost />
     </ThemeProvider>
   );
 }
