@@ -1,23 +1,17 @@
-import { Text, View } from "react-native";
-import "../global.css";
+import { ThemeToggle } from "@/components/common/theme-toggle";
+import { HeroSection } from "@/components/section/hero-section";
 
-import { Badge } from "@/components/badge";
+import { View } from "react-native";
 
 export default function Index() {
   return (
-    <View className="flex-1 items-center justify-center gap-2">
-      <View>
-        <Text className="text-4xl">Arviejhay</Text>
-        <Text className="text-4xl">Alejandro</Text>
+    <View className="flex-1 bg-background transition-colors duration-300">
+      <View className="flex-row-reverse p-3">
+        <ThemeToggle />
       </View>
-      <Text className="text-base">
-        iOS · Expanding into React Native (Expo)
-      </Text>
-      <View className="flex-row gap-2">
-        <Badge label="Swift" icon="swift" />
-        <Badge label="SwiftUI" icon="swift" />
-        <Badge label="UIKit" />
-        <Badge label="Objective-C" />
+      <View className="flex-1 items-center justify-center gap-3">
+        <HeroSection />
+        <View className="h-[1px] w-9/12 bg-gray-400 my-4 px-5" />
       </View>
     </View>
   );
