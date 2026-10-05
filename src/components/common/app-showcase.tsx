@@ -7,6 +7,8 @@ import type { AppLinkKind, AppProject } from "@/data/apps";
 import { THEME } from "@/lib/theme";
 import { cn } from "@/lib/utils";
 
+import { TechSubsection } from "@/components/common/tech-subsection";
+
 import FontAwesome6 from "@react-native-vector-icons/fontawesome6";
 import MaterialDesignIcons from "@react-native-vector-icons/material-design-icons";
 
@@ -78,9 +80,13 @@ export function AppShowcase({ app }: { app: AppProject }) {
           {app.description}
         </Text>
       </View>
-      <View className="flex-row flex-wrap justify-center gap-2 max-w-md">
-        {app.tech.map((t) => (
-          <Badge key={t} label={t} />
+      <View className="w-full max-w-md items-center gap-4">
+        {app.tech.map((group) => (
+          <TechSubsection key={group.label} label={group.label}>
+            {group.items.map((item) => (
+              <Badge key={item} label={item} />
+            ))}
+          </TechSubsection>
         ))}
       </View>
       {app.links?.length ? (

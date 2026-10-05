@@ -10,7 +10,7 @@ export type AppProject = {
   name: string;
   description: string;
   icon: { light: ImageSourcePropType; dark: ImageSourcePropType };
-  tech: string[];
+  tech: { label: string; items: string[] }[];
   status: AppStatus;
   links?: AppLink[];
 };
@@ -25,11 +25,27 @@ export const APPS: AppProject[] = [
       dark: require("@/assets/images/simply-job-tracker-dark.png"),
     },
     tech: [
-      "Swift",
-      "SwiftUI",
-      "SwiftData",
-      "Apple Foundation Models",
-      "Swift Testing",
+      {
+        label: "Architecture",
+        items: ["Swift", "MVVM", "Coordinator Pattern"],
+      },
+      {
+        label: "Apple Frameworks",
+        items: [
+          "SwiftUI",
+          "SwiftData",
+          "Observation",
+          "Swift Concurrency",
+          "WidgetKit",
+          "App Intents",
+          "Foundation Models",
+        ],
+      },
+      {
+        label: "Testing & Delivery",
+        items: ["Swift Testing", "XCTest", "Xcode Cloud"],
+      },
+      { label: "Services", items: ["RevenueCat"] },
     ],
     status: "TestFlight beta",
     links: [
