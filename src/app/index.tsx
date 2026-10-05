@@ -12,7 +12,7 @@ export default function Index() {
   const insets = useSafeAreaInsets();
 
   return (
-    <View className="flex-1 bg-background transition-colors duration-300">
+    <View className="flex-1 native:bg-background">
       <View className="absolute top-0 right-0 z-10 p-3">
         <ThemeToggle />
       </View>
