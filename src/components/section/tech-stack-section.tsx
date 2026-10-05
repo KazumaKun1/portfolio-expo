@@ -75,9 +75,11 @@ export function TechStackSection() {
         />
         <Badge label="Expo" />
         <Badge label="React Native" />
+        <Badge label="NativeWind" />
       </TechSubsection>
       <Text className="text-xs text-muted-foreground text-center italic font-thin">
-        This portfolio is built on React, React Native, TypeScript, and Expo.{" "}
+        This portfolio is built on React, React Native, TypeScript, NativeWind
+        and Expo.{" "}
         <Link
           href="https://github.com/KazumaKun1/portfolio-expo"
           className="font-semibold underline text-blue-600 active:text-blue-800 dark:text-blue-400 dark:active:text-blue-300"
