@@ -15,7 +15,7 @@ export function ThemeToggle() {
   return (
     <Pressable
       onPress={toggleColorScheme}
-      className="rounded-full bg-secondary px-2 py-2"
+      className="rounded-full bg-secondary px-2 py-2 border border-border"
     >
       <MaterialDesignIcons
         name="theme-light-dark"
