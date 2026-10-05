@@ -4,10 +4,21 @@ import { StatusBar } from "expo-status-bar";
 import { useColorScheme } from "nativewind";
 import { useEffect } from "react";
 import { Platform } from "react-native";
+import {
+  configureReanimatedLogger,
+  ReanimatedLogLevel,
+} from "react-native-reanimated";
 
 import { NAV_THEME } from "@/lib/theme";
 
 import "../global.css";
+
+// NativeWind 4's transition interop reads shared values during render, which
+// Reanimated 4's strict mode flags. Harmless, so keep other warnings but drop strict.
+configureReanimatedLogger({
+  level: ReanimatedLogLevel.warn,
+  strict: false,
+});
 
 export default function RootLayout() {
   const { colorScheme } = useColorScheme();

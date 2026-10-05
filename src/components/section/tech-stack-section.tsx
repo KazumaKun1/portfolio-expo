@@ -1,5 +1,6 @@
 import { useColorScheme } from "nativewind";
 
+import { Link } from "expo-router";
 import { Platform, Text, View } from "react-native";
 
 import { Badge } from "@/components/common/badge";
@@ -75,6 +76,15 @@ export function TechStackSection() {
         <Badge label="Expo" />
         <Badge label="React Native" />
       </TechSubsection>
+      <Text className="text-xs text-muted-foreground text-center italic font-thin">
+        This portfolio is built on React, React Native, TypeScript, and Expo.{" "}
+        <Link
+          href="https://github.com/KazumaKun1/portfolio-expo"
+          className="font-semibold underline text-blue-600 active:text-blue-800 dark:text-blue-400 dark:active:text-blue-300"
+        >
+          View Source
+        </Link>
+      </Text>
     </View>
   );
 }

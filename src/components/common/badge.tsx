@@ -13,7 +13,7 @@ export function Badge(props: BadgeProps) {
   return (
     <View
       className={cn(
-        "flex-row items-center gap-1 rounded-full bg-secondary px-3 py-1 transition-colors duration-300",
+        "flex-row items-center gap-1 rounded-full bg-secondary px-3 py-1 border border-border transition-colors duration-300",
         props.className,
       )}
     >

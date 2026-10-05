@@ -18,7 +18,7 @@ export function HeroSection() {
       : undefined;
 
   return (
-    <View className="items-center gap-3 w-full px-4 max-w-xl">
+    <View className="items-center gap-3 w-full max-w-xl">
       <View className="gap-5">
         <View className="items-center">
           <Text className="text-4xl sm:text-5xl font-semibold text-foreground">
@@ -33,6 +33,18 @@ export function HeroSection() {
         </Text>
       </View>
       <View className="flex-row flex-wrap justify-center gap-3">
+        <LinkButton
+          label="Resume"
+          href="https://drive.google.com/file/d/1BohMJ0BKVN5LORP4mczO31OO_qtojc2y/preview"
+          icon={
+            <MaterialDesignIcons
+              name="file-document"
+              size={14}
+              color={iconColor}
+              style={iconTransitionStyle}
+            />
+          }
+        />
         <LinkButton
           label="GitHub"
           href="https://github.com/KazumaKun1"
@@ -59,6 +71,10 @@ export function HeroSection() {
           }
         />
       </View>
+      <Text className="text-xs sm:text-sm text-muted-foreground text-center font-light max-w-md">
+        iOS developer with 7+ years of experience across fintech, e-commerce
+        grocery, telecommunications, and CRM apps for food pantry tracking.
+      </Text>
     </View>
   );
 }
