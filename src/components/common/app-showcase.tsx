@@ -7,7 +7,9 @@ import type { AppLinkKind, AppProject } from "@/data/apps";
 import { THEME } from "@/lib/theme";
 import { cn } from "@/lib/utils";
 
+import { ScreenshotCarousel } from "@/components/common/screenshot-carousel";
 import { TechSubsection } from "@/components/common/tech-subsection";
+import { YouTubePlayer } from "@/components/common/youtube-player";
 
 import FontAwesome6 from "@react-native-vector-icons/fontawesome6";
 import MaterialDesignIcons from "@react-native-vector-icons/material-design-icons";
@@ -39,7 +41,7 @@ export function AppShowcase({ app }: { app: AppProject }) {
       : "0px 12px 24px 0px rgba(0,0,0,0.15)";
 
   return (
-    <View className="items-center gap-5">
+    <View className="w-full items-center gap-5">
       <View
         className="size-20 rounded-[18px]"
         style={{
@@ -80,6 +82,15 @@ export function AppShowcase({ app }: { app: AppProject }) {
           {app.description}
         </Text>
       </View>
+      {app.screenshots?.length ? (
+        <ScreenshotCarousel screenshots={app.screenshots} />
+      ) : null}
+      {app.video ? (
+        <YouTubePlayer
+          videoId={app.video.youtubeId}
+          title={app.video.title}
+        />
+      ) : null}
       <View className="w-full max-w-md items-center gap-4">
         {app.tech.map((group) => (
           <TechSubsection key={group.label} label={group.label}>
