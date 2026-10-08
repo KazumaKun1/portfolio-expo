@@ -1,3 +1,4 @@
+import * as Application from "expo-application";
 import { View } from "react-native";
 import { WebView } from "react-native-webview";
 
@@ -5,6 +6,12 @@ export type YouTubePlayerProps = {
   videoId: string;
   title: string;
 };
+
+// YouTube requires embeds in a WebView to identify the app through the Referer,
+// as https://<Android application ID or iOS bundle ID>.
+const referer = Application.applicationId
+  ? `https://${Application.applicationId.toLowerCase()}`
+  : undefined;
 
 // Native: render the embed inside a WebView. The web build uses
 // youtube-player.web.tsx (a plain iframe) instead.
@@ -17,11 +24,12 @@ export function YouTubePlayer({ videoId, title }: YouTubePlayerProps) {
   title="${title}" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
 </body></html>`;
 
+  // 202 = YouTube's 200px minimum player height + the 1px border on each side.
   return (
-    <View className="w-full max-w-md aspect-video overflow-hidden rounded-2xl border border-border bg-black">
+    <View className="w-full max-w-md aspect-video min-h-[202px] overflow-hidden rounded-2xl border border-border bg-black">
       <WebView
-        // A base URL gives the embed a referrer, which YouTube requires.
-        source={{ html, baseUrl: "https://www.youtube.com" }}
+        // For local HTML, the base URL is what the embed sees as its Referer.
+        source={{ html, baseUrl: referer }}
         allowsFullscreenVideo
         allowsInlineMediaPlayback
         scrollEnabled={false}

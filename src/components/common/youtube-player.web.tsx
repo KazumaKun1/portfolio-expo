@@ -4,8 +4,9 @@ import type { YouTubePlayerProps } from "./youtube-player";
 
 // Web: a plain iframe. (react-native-webview doesn't support web.)
 export function YouTubePlayer({ videoId, title }: YouTubePlayerProps) {
+  // 202 = YouTube's 200px minimum player height + the 1px border on each side.
   return (
-    <View className="w-full max-w-md aspect-video overflow-hidden rounded-2xl border border-border bg-black">
+    <View className="w-full max-w-md aspect-video min-h-[202px] overflow-hidden rounded-2xl border border-border bg-black">
       <iframe
         src={`https://www.youtube-nocookie.com/embed/${videoId}?rel=0`}
         title={title}

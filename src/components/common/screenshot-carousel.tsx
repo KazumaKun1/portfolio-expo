@@ -122,14 +122,20 @@ export function ScreenshotCarousel({
   }
 
   const background = THEME[mode].background;
+  // The track slides left by one loop, so it must still cover the screen at
+  // the end of the lap: at least one loop of content past the viewport width.
+  const copies = Math.ceil(screenWidth / loopWidth) + 1;
 
   return (
     <View className="overflow-hidden" style={{ width: screenWidth }}>
-      {/* Two copies back to back so the loop wraps without a visible jump. */}
+      {/* Repeated copies back to back so the loop wraps without a visible jump. */}
       <Animated.View
-        style={[{ flexDirection: "row", width: loopWidth * 2 }, animatedStyle]}
+        style={[
+          { flexDirection: "row", width: loopWidth * copies },
+          animatedStyle,
+        ]}
       >
-        {[0, 1].map((copy) =>
+        {Array.from({ length: copies }, (_, copy) =>
           screenshots.map((shot, i) => (
             <Screenshot key={`${copy}-${i}`} source={shot[mode]} />
           )),
