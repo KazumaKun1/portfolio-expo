@@ -10,6 +10,8 @@ export type AppProject = {
   name: string;
   description: string;
   icon: { light: ImageSourcePropType; dark: ImageSourcePropType };
+  screenshots?: { light: ImageSourcePropType; dark: ImageSourcePropType }[];
+  video?: { youtubeId: string; title: string };
   tech: { label: string; items: string[] }[];
   status: AppStatus;
   links?: AppLink[];
@@ -23,6 +25,40 @@ export const APPS: AppProject[] = [
     icon: {
       light: require("@/assets/images/simply-job-tracker-light.png"),
       dark: require("@/assets/images/simply-job-tracker-dark.png"),
+    },
+    screenshots: [
+      {
+        light: require("@/assets/images/simply-job-tracker/main-light.png"),
+        dark: require("@/assets/images/simply-job-tracker/main-dark.png"),
+      },
+      {
+        light: require("@/assets/images/simply-job-tracker/detail-light.png"),
+        dark: require("@/assets/images/simply-job-tracker/detail-dark.png"),
+      },
+      {
+        light: require("@/assets/images/simply-job-tracker/edit1-light.png"),
+        dark: require("@/assets/images/simply-job-tracker/edit1-dark.png"),
+      },
+      {
+        light: require("@/assets/images/simply-job-tracker/edit2-light.png"),
+        dark: require("@/assets/images/simply-job-tracker/edit2-dark.png"),
+      },
+      {
+        light: require("@/assets/images/simply-job-tracker/main-offer-filter-light.png"),
+        dark: require("@/assets/images/simply-job-tracker/main-offer-filter-dark.png"),
+      },
+      {
+        light: require("@/assets/images/simply-job-tracker/ai-light.png"),
+        dark: require("@/assets/images/simply-job-tracker/ai-dark.png"),
+      },
+      {
+        light: require("@/assets/images/simply-job-tracker/widget-light.png"),
+        dark: require("@/assets/images/simply-job-tracker/widget-dark.png"),
+      },
+    ],
+    video: {
+      youtubeId: "XAOWGyN88E0",
+      title: "Simply Job Tracker walkthrough",
     },
     tech: [
       {

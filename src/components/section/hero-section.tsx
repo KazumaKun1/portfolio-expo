@@ -72,7 +72,7 @@ export function HeroSection() {
         />
       </View>
       <Text className="text-xs sm:text-sm text-muted-foreground text-center font-light max-w-md">
-        iOS developer with 7+ years of experience across fintech, e-commerce
+        iOS developer with 6+ years of experience across fintech, e-commerce
         grocery, telecommunications, and CRM apps for food pantry tracking.
       </Text>
     </View>
