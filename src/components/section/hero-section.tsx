@@ -29,7 +29,7 @@ export function HeroSection() {
           </Text>
         </View>
         <Text className="text-base text-muted-foreground text-center">
-          iOS Developer · Learning React Native (Expo)
+          iOS Developer · Learning React Native, Flutter & Kotlin
         </Text>
       </View>
       <View className="flex-row flex-wrap justify-center gap-3">

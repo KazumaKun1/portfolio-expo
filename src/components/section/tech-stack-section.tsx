@@ -76,6 +76,40 @@ export function TechStackSection() {
         <Badge label="Expo" />
         <Badge label="React Native" />
         <Badge label="NativeWind" />
+        <Badge
+          label="Flutter"
+          icon={
+            <FontAwesome6
+              name="flutter"
+              iconStyle="brand"
+              color={iconColor}
+              style={iconTransitionStyle}
+            />
+          }
+        />
+        <Badge
+          label="Dart"
+          icon={
+            <FontAwesome6
+              name="dart-lang"
+              iconStyle="brand"
+              color={iconColor}
+              style={iconTransitionStyle}
+            />
+          }
+        />
+        <Badge label="Kotlin Multiplatform (KMP)" />
+        <Badge
+          label="Kotlin"
+          icon={
+            <MaterialDesignIcons
+              name="language-kotlin"
+              color={iconColor}
+              style={iconTransitionStyle}
+            />
+          }
+        />
+        <Badge label="Jetpack Compose" />
       </TechSubsection>
       <Text className="text-xs text-muted-foreground text-center italic font-thin">
         This portfolio is built on React, React Native, TypeScript, NativeWind
