@@ -35,7 +35,7 @@ export function HeroSection() {
       <View className="flex-row flex-wrap justify-center gap-3">
         <LinkButton
           label="Resume"
-          href="https://drive.google.com/file/d/1BohMJ0BKVN5LORP4mczO31OO_qtojc2y/preview"
+          href="https://drive.google.com/file/d/1ysd0CwFpv6-8JkZPYfYZPdEyC6QMlpIz/view"
           icon={
             <MaterialDesignIcons
               name="file-document"
@@ -64,6 +64,19 @@ export function HeroSection() {
           icon={
             <MaterialDesignIcons
               name="email-outline"
+              size={14}
+              color={iconColor}
+              style={iconTransitionStyle}
+            />
+          }
+        />
+        <LinkButton
+          label="LinkedIn"
+          href="https://www.linkedin.com/in/arviejhay-alejandro/"
+          icon={
+            <FontAwesome6
+              name="linkedin"
+              iconStyle="brand"
               size={14}
               color={iconColor}
               style={iconTransitionStyle}
