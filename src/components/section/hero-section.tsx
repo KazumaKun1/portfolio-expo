@@ -71,7 +71,7 @@ export function HeroSection() {
           }
         />
         <LinkButton
-          label="Linkedin"
+          label="LinkedIn"
           href="https://www.linkedin.com/in/arviejhay-alejandro/"
           icon={
             <FontAwesome6
